@@ -1,13 +1,13 @@
 Package.describe({
     name: 'meteorengine:inviteme',
-    version: '0.0.2',
+    version: '0.0.6',
     // Brief, one-line summary of the package.
     summary: 'An account invitation management system for Meteor.',
     // URL to the Git repository containing the source code for this package.
-    git: '',
+    git: 'https://github.com/MeteorEngine/inviteme',
     // By default, Meteor will default to using README.md for documentation.
     // To avoid submitting documentation, set this field to null.
-    documentation: 'README.md'
+    //documentation: 'https://github.com/MeteorEngine/inviteme/blob/master/README.md'
 });
 
 Package.onUse(function(api) {

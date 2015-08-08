@@ -54,6 +54,10 @@ Meteor.methods({
     },
     'MErescindInvite': function(id){
         MEinvites.remove(id)
+    },
+    'MEaddUserRole': function(user){
+        var user = Meteor.users.findOne(user);
+        Roles.addUsersToRoles(user._id,user.profile.invite.role)
     }
 })
 

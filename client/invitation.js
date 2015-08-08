@@ -34,7 +34,11 @@ Template.MeteorEngineInvitation.events({
             if(error){
                 $('.errors').append("<div class='alert alert-info'>"+error+"</div>")
             }else{
-                Router.go(config.signUp.redirectRoute)
+                if(Meteor.userId()){
+                    Meteor.call('MEaddUserRole',Meteor.userId(),function(){
+                        Router.go(config.signUp.redirectRoute)
+                    })
+                }
             }
         })
         Meteor.call('MErescindInvite',profile.invite._id);
