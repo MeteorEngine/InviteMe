@@ -1,0 +1,39 @@
+<template name="MeteorEngineInvitationHub">
+    <h1>User Invitations</h1>
+    <div class='row'>
+        <div class='col-lg-4 col-md-4 '>
+            {{>MeteorEngineInviteForm}}
+        </div>
+        <div class='col-lg-8 col-md-7'>
+            {{>MeteorEnginePendingInvites}}
+        </div>
+    </div>
+</template>
+
+<template name="MeteorEnginePendingInvites">
+    <h4 class="syc-title">Pending Invitations</h4>
+    <div class='well'>
+        These invitations have been sent but not yet accepted.
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <th class="active">Email</th>
+            <th class="success">Firstname</th>
+            <th class="warning">Lastname</th>
+            <th class="danger">Username</th>
+            <th class="info"></th>
+        </thead>
+        <tbody>
+            {{#each invitations}}
+
+            <tr>
+                <td>{{email}}</td>
+                <td>{{firstname}}</td>
+                <td>{{lastname}}</td>
+                <td>{{username}}</td>
+                <td><div class='btn btn-info rescindInvite' id='{{_id}}'>Rescind</div></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

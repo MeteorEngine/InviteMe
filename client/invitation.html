@@ -1,0 +1,61 @@
+<template name="MeteorEngineInvitation">
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 text-center'>
+                {{#if invite}}
+                    <h2>Account Setup</h2>
+                    <div class='errors'></div>
+                    {{#if MEInviteSettings.firstname}}
+                    <p><b>Firstname:</b>
+                        {{#if MEInviteSettings.firstname.modify}}
+                            <input class='form-control MEinvite' name='firstname' id='firstname' value='{{invite.firstname}}'>
+                        {{else}}
+                            <input class='form-control MEinvite' name='firstname' id='firstname' value='{{invite.firstname}}' disabled>
+                        {{/if}}
+                    </p>
+                    {{/if}}
+                    {{#if MEInviteSettings.lastname}}
+                    <p><b>Lastname:</b>
+                        {{#if MEInviteSettings.lastname.modify}}
+                            <input class='form-control MEinvite' name='lastname' id='lastname' value='{{invite.lastname}}'>
+                        {{else}}
+                            <input class='form-control MEinvite' name='lastname' id='lastname' value='{{invite.lastname}}' disabled>
+                        {{/if}}
+                    </p>
+                    {{/if}}
+                    <p><b>Email:</b>
+                        {{#if MEInviteSettings.email.modify}}
+                            <input class='form-control MEinvite' name='email' id='email' value='{{invite.email}}'>
+                        {{else}}
+                            <input class='form-control MEinvite' name='email' id='email' value='{{invite.email}}' disabled>
+                        {{/if}}
+                    </p>
+                    {{#if MEInviteSettings.username}}
+                    <p><b>Username:</b>
+                        {{#if MEInviteSettings.username.modify}}
+                            <input class='form-control MEinvite' name='username' id='username' value='{{invite.username}}'>
+                        {{else}}
+                            <input class='form-control MEinvite' name='username' id='username' value='{{invite.username}}' disabled>
+                        {{/if}}
+                    </p>
+                    {{/if}}
+                    {{#if MEInviteSettings.phone}}
+                    <p><b>Phone:</b>
+                        {{#if MEInviteSettings.phone.modify}}
+                            <input class='form-control MEinvite' name='phone' id='phone' value='{{invite.phone}}'>
+                        {{else}}
+                            <input class='form-control MEinvite' name='phone' id='phone' value='{{invite.phone}}' disabled>
+                        {{/if}}
+                    </p>
+                    {{/if}}
+                    <p><b>Password:</b>
+                        <input type='password' class='form-control' name='password' id='password'>
+                    </p>
+                    <div class='btn btn-info completeSetup'>Complete Account Setup</div>
+                {{else}}
+                    <h2>Invalid Token</h2>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>

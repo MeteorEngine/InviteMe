@@ -1,0 +1,36 @@
+<template name="MeteorEngineInviteForm">
+    {{#if isInRole MEInviteSettings.hostRoles}}
+    <h4 class="syc-title">Invite New Users</h4>
+    <div class='well'>
+        <div class='errors'></div>
+        <form id='MEinviteForm'>
+            {{#if MEInviteSettings.firstname}}
+            <p><b>Firstname:</b> <input class='form-control MEinvite' name='firstname' id='firstname'></p>
+            {{/if}}
+            {{#if MEInviteSettings.lastname}}
+            <p><b>Lastname:</b> <input class='form-control MEinvite' name='lastname' id='lastname'></p>
+            {{/if}}
+            <p><b>Email:</b> <input class='form-control MEinvite' name='email' id='email'></p>
+            {{#if MEInviteSettings.username}}
+            <p><b>Username:</b> <input class='form-control MEinvite' name='username' id='username'></p>
+            {{/if}}
+            {{#if MEInviteSettings.phone}}
+            <p><b>Phone:</b> <input class='form-control MEinvite' name='phone' id='phone'></p>
+            {{/if}}
+            {{#if MEInviteSettings.inviteRoles}}
+                {{#if MEInviteSettings.inviteRoles.roles}}
+                <p><b>Role:</b>
+                    <select name='role' id='role' class='form-control'>
+                        <option value=''>Select A Role</option>
+                        {{#each MEInviteSettings.inviteRoles.roles}}
+                        <option value='{{this}}'>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </p>
+                {{/if}}
+            {{/if}}
+            <div class='btn btn-info MEsendInvite'>Send Invite</div>
+        </form>
+    </div>
+    {{/if}}
+</template>
